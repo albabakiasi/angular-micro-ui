@@ -1,0 +1,37 @@
+// Fonts
+$font: "Montserrat", sans-serif;
+
+// Colors
+$red: #f93d3d;
+$accent: #282828;
+$light-gray: #f1f1f1;
+
+// Sizes
+$max-width: 1200px;
+
+// Mixin
+@mixin flex($direction: row, $align: center, $justification: space-between) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justification;
+  align-items: $align;
+}
+
+// Buttons
+.ai-button {
+  width: 200px;
+  text-align: center;
+  padding: 13px 5px;
+  font-size: 1rem;
+  border-radius: 5px;
+  font-weight: 600;
+  outline: none;
+  border: none;
+  text-transform: uppercase;
+  color: #ffffff;
+  cursor: pointer;
+
+  &--red {
+    background-color: #f93d3d;
+  }
+}

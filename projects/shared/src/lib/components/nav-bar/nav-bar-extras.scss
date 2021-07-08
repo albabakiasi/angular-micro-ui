@@ -1,0 +1,106 @@
+// Hamburger Menu
+.hamBtn {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  z-index: 4;
+}
+
+.ham {
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 400ms;
+  pointer-events: none;
+  width: 40px;
+  height: 40px;
+  background-color: #ffffff;
+  transition: background-color 0s 0.5s ease;
+}
+.hamRotate.active {
+  transform: rotate(45deg);
+  background-color: transparent;
+  transition: none;
+}
+.hamRotate180.active {
+  transform: rotate(180deg);
+}
+.line {
+  fill: none;
+  transition: stroke-dasharray 400ms, stroke-dashoffset 400ms, stroke 0.5ms 0.5s ease-in-out;
+  stroke: #000;
+  stroke-width: 5.5;
+  stroke-linecap: round;
+}
+
+.ham.active .line {
+  stroke: #ffffff;
+  transition: stroke-dasharray 400ms, stroke-dashoffset 400ms, stroke 0.5ms ease-in-out;
+}
+
+.ham8 .top {
+  stroke-dasharray: 40 160;
+}
+
+.ham8 .middle {
+  stroke-dasharray: 40 142;
+  transform-origin: 50%;
+  transition: transform 400ms, stroke 0.5ms 0.5s ease-in-out;
+}
+.ham8 .bottom {
+  stroke-dasharray: 40 85;
+  transform-origin: 50%;
+  transition: transform 400ms, stroke-dashoffset 400ms, stroke 0.5ms 0.5s ease-in-out;
+}
+.ham8.active .top {
+  stroke-dashoffset: -64px;
+}
+.ham8.active .middle {
+  transform: rotate(90deg);
+}
+.ham8.active .bottom {
+  stroke-dashoffset: -64px;
+}
+
+// Sidebar
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #282828;
+  width: 100vw;
+  height: 100vh;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: white;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  clip-path: circle(0px at 27px 22px);
+  background-color: #282828;
+  transition: all 0.5s ease-in-out, background-color 0.1s;
+}
+
+.first,
+.second {
+  width: 30%;
+}
+
+.second .language {
+  font-size: 1rem;
+  margin-bottom: 35px;
+}
+
+.second .language span:nth-child(1) {
+  color: #f93d3d;
+  margin-right: 10px;
+}
+.sidebar .first .item {
+  margin-top: 20px;
+}
+
+.sidebar.active {
+  clip-path: circle(1000px at 20px 20px) !important;
+}

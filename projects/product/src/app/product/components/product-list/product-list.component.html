@@ -1,0 +1,31 @@
+<div class="container">
+  <h2>Product (Microfrontend)</h2>
+  <p>This product component is being remotely loaded into the application using Module Federation, angular is shared so
+    the download is minimal for the frontend</p>
+
+    <div class="card">
+      <div class="card-body">
+        <ng-container *ngIf="products$">
+          <div class="products-container">
+            <div class="product-card" *ngFor="let product of products$ | async">
+              <h3 class="product-card--title">
+                {{ product.name }}
+                <!-- {{ "PRODUCT." + product.key + ".TITLE" | translate }} -->
+              </h3>
+              <p class="product-card--description">
+                <!-- {{ product.description }} -->
+                <!-- {{ "PRODUCT." + product.key + ".DESCRIPTION" | translate }} -->
+              </p>
+              <button (click)="selectProduct(product)"
+              >
+                FILLO
+              </button>
+            </div>
+          </div>
+        </ng-container>
+        
+      </div>
+    </div>    
+
+    <br />
+</div>

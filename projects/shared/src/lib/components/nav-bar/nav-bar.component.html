@@ -1,0 +1,69 @@
+<nav class="navbar">
+  <div class="content">
+    <!-- Hamburger Menu -->
+    <div class="hamBtn-container">
+      <button class="hamBtn" (click)="sideBarActive = !sideBarActive">
+        <svg
+          class="ham hamRotate ham8"
+          [ngClass]="{ active: sideBarActive }"
+          viewBox="0 0 100 100"
+          width="80"
+        >
+          <path
+            class="line top"
+            d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20"
+          ></path>
+          <path class="line middle" d="m 30,50 h 40"></path>
+          <path
+            class="line bottom"
+            d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20"
+          ></path>
+        </svg>
+      </button>
+    </div>
+    <div class="left">
+      <span class="pos nav-item">{{ "HOME" | translate }}</span>
+      <span class="nav-item">Blog</span>
+    </div>
+    <img class="logo" src="/assets/shared/logo.png" alt="" />
+    <div class="right">
+      <span
+        class="en pos nav-item"
+        [ngClass]="{ active: language == 'en' }"
+        href="javascript:;"
+        (click)="setLanguage('en')"
+        >EN</span
+      >
+      <span
+        class="al pos nav-item"
+        href="javascript:;"
+        [ngClass]="{ active: language == 'sq' }"
+        (click)="setLanguage('sq')"
+        >AL</span
+      >
+
+      <span class="nav-item">Log in</span>
+    </div>
+  </div>
+</nav>
+
+<!-- Sidebar -->
+<div class="sidebar" [ngClass]="{ active: sideBarActive }">
+  <div class="first">
+    <div class="item">Home</div>
+    <div class="item">Blog</div>
+    <div class="item">Log in</div>
+  </div>
+
+  <div class="second">
+    <div class="language">
+      <span>AL</span>
+      <span>EN</span>
+    </div>
+    <div class="icons">
+      <img src="/assets/shared/svg/facebook.svg" />
+      <img src="/assets/shared/svg/instagram.svg" />
+      <img src="/assets/shared/svg/linkedin.svg" />
+    </div>
+  </div>
+</div>
